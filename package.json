@@ -23,11 +23,15 @@
     "webrtc-adapter": "^6.4.8"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.1",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
     "codeceptjs": "^2.1.1",
     "expect.js": "^0.3.1",
     "mocha": "^5.2.0",
     "peer": "^0.2.10",
     "ts-loader": "^5.4.5",
+    "ts-node": "^8.3.0",
     "typescript": "^3.4.5",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
@@ -35,7 +39,8 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "build-and-start": "webpack --config webpack.config.js && peerjs --port 9000 --key peerjs"
+    "build-and-start": "webpack --config webpack.config.js && peerjs --port 9000 --key peerjs",
+    "test": "mocha -r ts-node/register src/tests/**/*.ts"
   },
   "author": "Tom Van Eyck & Wouter De Keersmaecker",
   "license": "MIT"
