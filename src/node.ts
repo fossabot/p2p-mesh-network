@@ -5,7 +5,10 @@ import { NetworkEntity } from './network/network';
 import { MeshEventType, MeshEvent } from './event';
 
 export class Node {
-    private address: string = this.generateUuidv4();
+    private _address: string = this.generateUuidv4();
+    public get address() {
+        return this._address;
+    }
     
     public onMessageReceived: ((source: string, msg: any) => void) = function (source: string, msg: any) { };
     public onConnectedToNetwork: ((address: string) => void) = function (localId: string) { };
